@@ -3,131 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HabithackAI – Early Access</title>
+  <title>HabithackAI – Coming Soon</title>
   <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="assets/icon-192x192.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="site-header">
-    <a href="#" class="logo-link">
-      <img src="assets/logo-heart-neural-hh.svg" alt="HabithackAI logo" class="site-logo" />
-    </a>
-  </header>
-
-  <!-- Hero / Email Capture -->
-  <section id="hero">
-    <h1>Get Early Access to HabithackAI</h1>
-    <p>AI + Neuroscience + CBT meets habit change.</p>
-    <form id="signup-form">
-      <input type="email" id="email" placeholder="Your email address" required />
-      <button type="submit">Join the Waitlist</button>
+  <div class="container">
+    <img src="assets/logo-heart-neural-hh.svg" alt="HabithackAI Logo" class="logo" />
+    <h1>The world’s first AI + neuroscience habit-change assistant.</h1>
+    <p>Launching Fall 2025. Be the first to try it.</p>
+    <form action="https://your-form-endpoint" method="post" class="signup">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Notify Me</button>
     </form>
-    <div id="referral-box" class="hidden">
-      <p>You’re on the list! Share your link:</p>
-      <input type="text" id="referral-link" readonly />
-      <div class="share-buttons">
-        <button onclick="share('twitter')">Tweet</button>
-        <button onclick="share('facebook')">Share on Facebook</button>
-      </div>
-      <small>Refer 3 friends → front of the line<br/>Refer 10 → 3 months free Premium</small>
-    </div>
-  </section>
-
-  <!-- Why Join -->
-  <section id="why">
-    <h2>Why Join Now?</h2>
-    <ul>
-      <li><strong>Front-of-Line Access</strong> – Skip the wait.</li>
-      <li><strong>Exclusive Updates</strong> – See features first.</li>
-      <li><strong>Early-Bird Rewards</strong> – Claim limited perks.</li>
-    </ul>
-  </section>
-
-  <!-- Video -->
-  <section id="video">
-    <h2>Sneak Peek</h2>
-    <!-- replace src with your hosted video -->
-    <div class="video-placeholder">[Explainer Video Coming Soon]</div>
-  </section>
-
-  <!-- Reward Tiers -->
-  <section id="tiers">
-    <h2>Reward Tier Highlights</h2>
-    <table>
-      <thead>
-        <tr><th>Tier</th><th>Price</th><th>Key Perk</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Support the Movement</td><td>$5</td><td>Name on Supporter Wall</td></tr>
-        <tr><td>Early Access Hacker</td><td>$25</td><td>Beta Access + Templates</td></tr>
-        <tr><td>Founding Member</td><td>$50</td><td>+ Private Discord</td></tr>
-        <tr><td>Cortex SuperUser</td><td>$100</td><td>+ 3-Month Premium</td></tr>
-        <tr><td>Transform Together</td><td>$200</td><td>+ Gift & Onboarding</td></tr>
-        <tr><td>AI Wellness Founder</td><td>$500</td><td>+ Name in Credits</td></tr>
-        <tr><td>Visionary Circle</td><td>$1,000</td><td>+ Lifetime Premium & Call</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h2>About HabithackAI</h2>
-    <p>The world’s first AI habit-change assistant built on neuroscience and CBT. Cortex, your real-time coach, helps you build sticky habits by merging psychology with AI.</p>
-  </section>
-
-  <!-- Timeline -->
-  <section id="timeline">
-    <h2>Timeline</h2>
-    <ul>
-      <li><strong>July–Aug 2025:</strong> Beta testing</li>
-      <li><strong>Sept 2025:</strong> Indiegogo launch</li>
-      <li><strong>Q4 2025:</strong> Public v1.0 release</li>
-    </ul>
-  </section>
-
-  <!-- Footer / Legal -->
-  <footer>
-    <p>
-      <a href="#">Terms of Use</a> | 
-      <a href="#">Privacy Policy</a> | 
-      <a href="#">Wellness Disclaimer</a>
-    </p>
-    <p class="disclaimer">
-      “HabithackAI and its representatives do not offer medical, psychological, or therapeutic advice. All content is informational only.”
-    </p>
-  </footer>
-
-  <script>
-    // Form + referral link logic
-    const form = document.getElementById('signup-form');
-    const box = document.getElementById('referral-box');
-    const linkInput = document.getElementById('referral-link');
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      if (!email) return;
-      // Generate a simple referral code
-      const code = btoa(email).slice(0,8);
-      const refUrl = `${location.origin}${location.pathname}?ref=${code}`;
-      linkInput.value = refUrl;
-      box.classList.remove('hidden');
-      form.classList.add('hidden');
-    });
-
-    function share(platform) {
-      const url = encodeURIComponent(linkInput.value);
-      let shareUrl = '';
-      if (platform==='twitter') {
-        shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent('Join me on HabithackAI!')}%20${url}`;
-      } else {
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-      }
-      window.open(shareUrl,'_blank');
-    }
-  </script>
+  </div>
 </body>
 </html>
