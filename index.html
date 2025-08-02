@@ -1,18 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HabithackAI – Coming Soon</title>
-  <link rel="icon" href="assets/logo-heart-neural-hh.png" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <img src="assets/logo-heart-neural-hh.png" alt="HabithackAI Logo" class="logo" />
-    <h1>The world’s first AI + neuroscience habit-change assistant.</h1>
+    <h1>HabithackAI</h1>
+    <p>The world’s first AI + neuroscience habit-change assistant.</p>
     <p>Launching Fall 2025. Be the first to try it.</p>
-    <form action="#" method="post" class="signup">
+
+    <form action="https://formspree.io/f/manbdqrq" method="POST">
       <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit">Notify Me</button>
     </form>
