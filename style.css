@@ -1,37 +1,151 @@
+/* ===========================
+   HabithackAI — Brand Styles
+   =========================== */
 :root{
-  --blue:#5DB7FF;  /* baby blue */
-  --pink:#FF7EB3;  /* pink */
-  --ink:#0f172a;   /* dark text */
+  --blue:#5DB7FF;     /* baby blue */
+  --pink:#FF7EB3;     /* pink */
+  --ink:#0f172a;      /* charcoal */
+  --ink2:#334155;     /* slate */
+  --muted:#64748b;    /* gray text */
+  --panel:#E9F5FF;    /* tinted blue panel */
+  --panel-grad: linear-gradient(180deg, rgba(93,183,255,.25), rgba(255,126,179,.18));
+  --radius:14px;
+  --shadow: 0 18px 60px rgba(15,23,42,.18);
 }
 
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
 body{
-  display:flex; justify-content:center; align-items:center;
-  min-height:100vh;
-  background: linear-gradient(135deg, var(--blue), var(--pink));
-  font-family:'Inter','Segoe UI',sans-serif;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 1200px at 10% -10%, rgba(93,183,255,.35), transparent 60%),
+    radial-gradient(900px 900px at 110% 20%, rgba(255,126,179,.35), transparent 60%),
+    linear-gradient(135deg, #f8fbff, #fff);
 }
 
-.container{
-  background:#fff;
-  padding:2rem 2.25rem;
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
-  text-align:center;
-  max-width:520px; width:92%;
+/* Layout shell */
+.shell{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.55);
+  border-bottom:1px solid rgba(148,163,184,.25);
+}
+.site-header .shell{display:flex; align-items:center; justify-content:space-between; min-height:64px}
+.brand{display:flex; align-items:center; text-decoration:none; color:var(--ink)}
+.logo{
+  width:28px; height:28px; object-fit:contain; margin-right:10px;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.12));
+}
+.brand-name{font-weight:700; letter-spacing:.2px}
+.nav .btn{margin-left:10px}
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.7rem 1rem; border-radius:999px; border:none; cursor:pointer;
+  font-weight:600; text-decoration:none; transition:transform .06s ease, box-shadow .2s ease;
+}
+.btn-primary{
+  background:linear-gradient(135deg, var(--blue), var(--pink));
+  color:#fff; box-shadow:0 8px 24px rgba(255,126,179,.25);
+}
+.btn-primary:active{ transform: translateY(1px) }
+.btn-outline{
+  color:var(--ink); border:1px solid rgba(51,65,85,.25);
+  background:rgba(255,255,255,.6);
+}
+.btn-outline:hover{ box-shadow:0 8px 24px rgba(93,183,255,.25) }
+
+/* Hero */
+.hero{ position:relative; padding:72px 0 }
+.bg-ribbon{
+  position:absolute; inset:-20vh -20vw auto -20vw; height:40vh;
+  background:linear-gradient(90deg, rgba(93,183,255,.25), rgba(255,126,179,.25));
+  filter: blur(40px); z-index:0; pointer-events:none;
+}
+.hero-card{
+  position:relative; z-index:1;
+  background: var(--panel);
+  background-image: var(--panel-grad);
+  border:1px solid rgba(93,183,255,.35);
+  border-right-color: rgba(255,126,179,.35);
+  border-radius: var(--radius);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  box-shadow: var(--shadow);
+  max-width: 760px;
+  margin: 0 auto;
+}
+.hero h1{
+  margin:0 0 .5rem 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  line-height:1.2;
+}
+.tagline{
+  margin:0 0 1rem 0; color:var(--ink2); font-weight:600;
+}
+.chips{
+  list-style:none; display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1rem 0; padding:0;
+}
+.chips li{
+  background: rgba(255,255,255,.55);
+  border:1px solid rgba(148,163,184,.35);
+  border-radius:999px; padding:.4rem .7rem; font-size:.9rem; color:var(--ink2);
 }
 
-.logo{ width:160px; margin-bottom:1.25rem; filter: drop-shadow(0 1px 0 rgba(0,0,0,.15)); }
-h1{ color:var(--ink); font-size:1.8rem; line-height:1.3; margin-bottom:.75rem; }
-p{ color:#475569; margin-bottom:1.25rem; }
-.signup input{
-  width:100%; padding:.8rem; border:1px solid #cbd5e1; border-radius:8px;
-  margin-bottom:.8rem; font-size:1rem;
+/* Form */
+.waitlist-form{
+  display:grid; grid-template-columns:1fr auto; gap:.6rem; align-items:center;
+  margin-top:.5rem;
 }
-.signup button{
-  width:100%; padding:.9rem; border:0; border-radius:8px; cursor:pointer;
+.waitlist-form input[type="text"],
+.waitlist-form input[type="email"]{
+  grid-column:1 / -1;
+  padding:.9rem 1rem; border-radius:10px; border:1px solid rgba(51,65,85,.25);
+  background: rgba(255,255,255,.7);
+  font-size:1rem; color:var(--ink);
+}
+.waitlist-form .btn-primary{ grid-column:1 / -1; padding:.95rem 1rem }
+.form-note{ margin:.3rem 0 0 0; color:var(--muted); font-size:.9rem }
+.honeypot{ display:none !important }
+
+/* Trust row */
+.trust{
+  display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;
+  color:var(--ink2);
+}
+.trust-item{ display:flex; align-items:center; gap:.5rem; font-size:.95rem }
+.trust-item svg{ width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; }
+
+/* How it works */
+.how{ padding:56px 0 }
+.how h2{ text-align:center; margin:0 0 1.25rem 0; font-size:1.6rem }
+.steps{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px }
+.step{
+  background: rgba(255,255,255,.65);
+  border:1px solid rgba(148,163,184,.35);
+  border-radius: var(--radius);
+  padding:1rem;
+}
+.step h3{ margin:.4rem 0 .3rem 0; font-size:1.1rem }
+.step p{ margin:0; color:var(--muted) }
+.step-num{
+  display:inline-grid; place-items:center; width:32px; height:32px; border-radius:50%;
   background: linear-gradient(135deg, var(--blue), var(--pink));
-  color:#fff; font-weight:600; letter-spacing:.2px;
-  transition: transform .04s ease;
+  color:#fff; font-weight:700; font-size:.95rem;
 }
-.signup button:active{ transform: translateY(1px); }
-.footer-note{ margin-top:1rem; font-size:.85rem; color:#64748b; }
+
+/* Footer */
+.site-footer{ padding:36px 0 42px }
+.footer-grid{ display:flex; align-items:center; justify-content:space-between; gap:1rem; color:var(--muted) }
+.site-footer a{ color:var(--ink2); text-decoration:none; border-bottom:1px solid rgba(51,65,85,.25) }
+.site-footer a:hover{ border-bottom-color: var(--pink) }
+
+/* Responsive */
+@media (max-width: 920px){
+  .waitlist-form{ grid-template-columns:1fr }
+  .steps{ grid-template-columns:1fr; }
+}
