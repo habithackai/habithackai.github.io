@@ -6,18 +6,17 @@
   <title>HabithackAI — 21 days to build the habit. A lifetime to evolve it.</title>
   <meta name="description" content="AI + neuroscience habit-change assistant. Join the waitlist." />
   <link rel="icon" href="assets/logo-heart-neural-hh.png" />
-  <link rel="stylesheet" href="style.css?v=3" />
-  <meta property="og:title" content="HabithackAI — AI + Neuroscience Habit Change" />
-  <meta property="og:description" content="21 days to build the habit. A lifetime to evolve it." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/logo-heart-neural-hh.png" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 
 <body>
   <header class="site-header">
     <div class="shell">
       <a href="#" class="brand">
-        <img src="assets/logo-heart-neural-hh.png" alt="HabithackAI logo" class="logo"/>
+        <!-- Logo badge so the mark pops -->
+        <span class="logo-badge">
+          <img src="assets/logo-heart-neural-hh.png" alt="HabithackAI logo" class="logo" />
+        </span>
         <span class="brand-name">HabithackAI</span>
       </a>
       <nav class="nav">
@@ -30,45 +29,28 @@
     <!-- HERO -->
     <section class="hero">
       <div class="shell">
-        <div class="hero-card">
-          <h1>The world’s first AI + neuroscience<br/>habit-change assistant.</h1>
-          <p class="tagline">“21 days to build the habit. A lifetime to evolve it.”</p>
-
-          <ul class="chips">
-            <li>Adaptive micro-habits</li>
-            <li>Mood-aware coaching</li>
-            <li>Privacy-first</li>
-          </ul>
-
-          <!-- WAITLIST FORM -->
-          <form id="waitlist" class="waitlist-form"
-                action="https://formspree.io/f/manbdqrq" method="POST">
-            <input type="hidden" name="_subject" value="HabithackAI Waitlist" />
-            <input type="text" name="name" placeholder="Your name (optional)" autocomplete="name" />
-            <input type="email" name="email" placeholder="Your email" required autocomplete="email" />
-            <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" />
-            <button type="submit" class="btn btn-primary">Notify Me</button>
-            <p class="form-note">Launching Fall 2025 • No spam, ever.</p>
-          </form>
-
-          <div class="trust">
-            <div class="trust-item">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-              <span>Privacy-first</span>
-            </div>
-            <div class="trust-item">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg>
-              <span>Evidence-informed</span>
-            </div>
-            <div class="trust-item">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h6l3 8 3-16 3 8h3"/></svg>
-              <span>Lightweight & humane</span>
-            </div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1>AI + neuroscience for real habit change</h1>
+            <p class="sub">“21 days to build the habit. A lifetime to evolve it.”</p>
+            <ul class="benefits">
+              <li>Adaptive micro-habits</li>
+              <li>Mood-aware coaching</li>
+              <li>Privacy-first</li>
+            </ul>
           </div>
+
+          <!-- WAITLIST (clean + prominent) -->
+          <form id="waitlist" class="waitlist" action="https://formspree.io/f/manbdqrq" method="POST">
+            <input type="hidden" name="_subject" value="HabithackAI Waitlist" />
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required autocomplete="email" />
+            <button type="submit" class="btn btn-primary">Notify Me</button>
+            <p class="tiny-note">Launching Fall 2025 • No spam, ever.</p>
+          </form>
         </div>
       </div>
-      <!-- decorative gradient flourish -->
-      <div class="bg-ribbon"></div>
+      <div class="bg-fade" aria-hidden="true"></div>
     </section>
 
     <!-- HOW IT WORKS -->
@@ -77,19 +59,19 @@
         <h2>How it works</h2>
         <div class="steps">
           <div class="step">
-            <span class="step-num">1</span>
-            <h3>Onboard in minutes</h3>
-            <p>Tell us your goal, schedule, and obstacles. We’ll start small—by design.</p>
+            <span class="num">1</span>
+            <h3>Set one goal</h3>
+            <p>Pick a single habit and your preferred time window.</p>
           </div>
           <div class="step">
-            <span class="step-num">2</span>
+            <span class="num">2</span>
             <h3>Daily micro-nudges</h3>
-            <p>Cortex adapts difficulty and timing based on your energy, mood, and progress.</p>
+            <p>Cortex adapts difficulty by your energy and mood.</p>
           </div>
           <div class="step">
-            <span class="step-num">3</span>
-            <h3>Grow beyond 21 days</h3>
-            <p>After the first win, continue with monthly themes and deeper growth tracks.</p>
+            <span class="num">3</span>
+            <h3>Grow past 21 days</h3>
+            <p>Shift into monthly themes to keep evolving.</p>
           </div>
         </div>
       </div>
@@ -98,13 +80,12 @@
 
   <footer class="site-footer">
     <div class="shell footer-grid">
-      <p>© <span id="y"></span> HabithackAI Inc. All rights reserved.</p>
+      <p>© <span id="y"></span> HabithackAI Inc.</p>
       <p><a href="mailto:hello@habithackai.com">hello@habithackai.com</a></p>
     </div>
   </footer>
 
   <script>
-    // year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
